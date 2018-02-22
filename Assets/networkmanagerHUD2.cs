@@ -41,7 +41,7 @@ public class networkmanagerHUD2 : MonoBehaviour
 
 void Start()
 {
-//manager.StartHost();
+manager.StartClient();
 }
  
  

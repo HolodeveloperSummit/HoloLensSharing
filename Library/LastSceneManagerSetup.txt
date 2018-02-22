@@ -2,6 +2,3 @@ sceneSetups:
 - path: Assets/HoloToolkit/SharingWithUNET/Scenes/SharingWithUnetExample 1.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/HoloToolkit/SharingWithUNET/Scenes/SharingWithUnetExample.unity
-  isLoaded: 1
-  isActive: 0
