@@ -1,8 +1,5 @@
 ﻿
 
-#if ENABLE_UNET
- 
- 
 namespace UnityEngine.Networking
  
 {
@@ -41,8 +38,10 @@ public class networkmanagerHUD2 : MonoBehaviour
 
 void Start()
 {
-manager.StartClient();
-}
+            manager.StartMatchMaker();
+            manager.matchMaker.CreateMatch(manager.matchName, manager.matchSize, true, "", "", "", 0, 0, manager.OnMatchCreate);
+
+        }
  
  
   void Update()
@@ -427,6 +426,5 @@ manager.StartClient();
 }
  
 };
- 
-#endif //ENABLE_UNET
+
 
