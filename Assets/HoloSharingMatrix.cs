@@ -40,7 +40,7 @@ public class HoloSharingMatrix : MonoBehaviour {
 
     public void LoadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(mainSceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
     }
 
     public void CalibrateSharedWorldSpace()
