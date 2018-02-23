@@ -20,19 +20,36 @@ public class buttonClick : MonoBehaviour, IInputClickHandler
     public virtual void OnInputClicked(InputClickedEventData eventData)
     {
         if (transform.GetChild(0).GetChild(0).name == "Host")
+        {
             UNETsharing.GetComponent<networkmanagerHUD2>().startH();
-
-        if (transform.GetChild(0).GetChild(0).name == "Client")
+        }
+        else if (transform.GetChild(0).GetChild(0).name == "Client")
+        {
+            Debug.Log("calling start client function");
             UNETsharing.GetComponent<networkmanagerHUD2>().startC();
-
-        if (transform.GetChild(0).GetChild(0).name == "Stop")
+        }
+        else if (transform.GetChild(0).GetChild(0).name == "Stop")
+        {
+            Debug.Log("calling stop function");
             UNETsharing.GetComponent<networkmanagerHUD2>().stopHost();
-
-        if (transform.GetChild(0).GetChild(0).name == "FindMatch")
+        }
+        else if (transform.GetChild(0).GetChild(0).name == "FindMatch")
+        {
             UNETsharing.GetComponent<networkmanagerHUD2>().findMatch();
+        }
 
-        if (transform.GetChild(0).GetChild(0).name == "JoinMatch")
+        else if (transform.GetChild(0).GetChild(0).name == "JoinMatch")
+        {
             UNETsharing.GetComponent<networkmanagerHUD2>().joinMatch();
+        }
+        else if (transform.GetChild(0).GetChild(0).name == "createMatch")
+        {
+            UNETsharing.GetComponent<networkmanagerHUD2>().createMatch();
+        }
+        else
+        {
+            Debug.Log("No button was recognized.");
+                }
     }
 
 }

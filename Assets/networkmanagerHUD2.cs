@@ -5,11 +5,11 @@ namespace UnityEngine.Networking
  
 {
  
-//[AddComponentMenu("Network/NetworkManagerHUD")]
+[AddComponentMenu("Network/NetworkManagerHUD")]
  
 [RequireComponent(typeof(NetworkManager))]
  
-//[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
  
 public class networkmanagerHUD2 : MonoBehaviour
  
@@ -57,133 +57,137 @@ void Start()
         }
  
  
-  void Update()
+  //void Update()
  
-  {
+  //{
 
  
  
-   if (!NetworkClient.active && !NetworkServer.active && manager.matchMaker == null)
+  // if (!NetworkClient.active && !NetworkServer.active && manager.matchMaker == null)
  
-   {
+  // {
  
-    if (Input.GetKeyDown(KeyCode.S))
+  //  if (Input.GetKeyDown(KeyCode.S))
  
-    {
+  //  {
  
-     manager.StartServer();
+  //   manager.StartServer();
  
-    }
+  //  }
  
-    if (Input.GetKeyDown(KeyCode.H))
+  //  if (Input.GetKeyDown(KeyCode.H))
  
-    {
+  //  {
  
-     manager.StartHost();
+  //   manager.StartHost();
  
-    }
+  //  }
  
-    if (Input.GetKeyDown(KeyCode.C))
+  //  if (Input.GetKeyDown(KeyCode.C))
  
-    {
+  //  {
  
-     manager.StartClient();
+  //   manager.StartClient();
  
-    }
+  //  }
  
-   }
+  // }
  
-   if (NetworkServer.active && NetworkClient.active)
+  // if (NetworkServer.active && NetworkClient.active)
  
-   {
+  // {
  
-    if (Input.GetKeyDown(KeyCode.X))
+  //  if (Input.GetKeyDown(KeyCode.X))
  
-    { 
-     manager.StopHost(); 
-    }
+  //  { 
+  //   manager.StopHost(); 
+  //  }
  
-   } 
+  // } 
  
-   if (!NetworkClient.active && !NetworkServer.active && manager.matchMaker == null) 
-   {
-                host.text = "LAN Host(H)";          
+  // if (!NetworkClient.active && !NetworkServer.active && manager.matchMaker == null) 
+  // {
+  //              host.text = "LAN Host(H)";          
                 
-                client.text = "LAN Client(C)";                
-   }
+  //              client.text = "LAN Client(C)";                
+  // }
  
-   else 
-   { 
-    if (NetworkServer.active) 
-    { 
-     portNumber.text = "Server: port=" + manager.networkPort; 
-    }
+  // else 
+  // { 
+  //  if (NetworkServer.active) 
+  //  { 
+  //   portNumber.text = "Server: port=" + manager.networkPort; 
+  //  }
  
-    if (NetworkClient.active) 
-    {
-                    clientAddress.text = "Client: address=" + manager.networkAddress; 
-                        portNumber.text = " port=" + manager.networkPort;
+  //  if (NetworkClient.active) 
+  //  {
+  //                  clientAddress.text = "Client: address=" + manager.networkAddress; 
+  //                      portNumber.text = " port=" + manager.networkPort;
  
-    }
+  //  }
  
-   } 
+  // } 
  
-   if (NetworkClient.active && !ClientScene.ready) 
-   { 
-     ClientScene.Ready(manager.client.connection); 
+  // if (NetworkClient.active && !ClientScene.ready) 
+  // { 
+  //   ClientScene.Ready(manager.client.connection); 
  
-     if (ClientScene.localPlayers.Count == 0) 
-     { 
-      ClientScene.AddPlayer(0); 
-     } 
-   } 
+  //   if (ClientScene.localPlayers.Count == 0) 
+  //   { 
+  //    ClientScene.AddPlayer(0); 
+  //   } 
+  // } 
  
-   if (NetworkServer.active || NetworkClient.active)
+  // if (NetworkServer.active || NetworkClient.active)
  
-   {
-                stop.text = "Stop (X)";   
-   } 
-   if (!NetworkServer.active && !NetworkClient.active)
+  // {
+  //              stop.text = "Stop (X)";   
+  // } 
+  // if (!NetworkServer.active && !NetworkClient.active)
  
-   { 
-    if (manager.matchMaker == null) 
-    {
-                    matchMaker.text = "Enable Match Maker (M)"; 
+  // { 
+  //  if (manager.matchMaker == null) 
+  //  {
+  //                  matchMaker.text = "Enable Match Maker (M)"; 
                      
-    }
+  //  }
  
-    else 
-    { 
-     if (manager.matchInfo == null) 
-     { 
-      if (manager.matches == null) 
-      {
-                            createMatchText.text = "Create Internet Match";
-                            findMatchText.text = "Find Internet Match"; 
-      } 
-      else 
-      { 
-       foreach (var match in manager.matches) 
-       {
-                                joinMatchText.text = "Join Match:" + match.name;   
-       }
+  //  else 
+  //  { 
+  //   if (manager.matchInfo == null) 
+  //   { 
+  //    if (manager.matches == null) 
+  //    {
+  //                          createMatchText.text = "Create Internet Match";
+  //                          findMatchText.text = "Find Internet Match"; 
+  //    } 
+  //    else 
+  //    { 
+  //     foreach (var match in manager.matches) 
+  //     {
+  //                              joinMatchText.text = "Join Match:" + match.name;   
+  //     }
  
-      }
+  //    }
  
-     }
+  //   }
  
  
  
-    }
+  //  }
  
-   }
+  // }
  
-  }
+  //}
 
         public void createMatch()
         {
-            manager.matchName = "hololensroom";
-            manager.matchMaker.CreateMatch(manager.matchName, manager.matchSize, true, "", "", "", 0, 0, manager.OnMatchCreate);            
+            manager.StartMatchMaker();
+            manager.matchMaker.CreateMatch("HoloLensRoom", manager.matchSize, true, "", "", "", 0, 0, manager.OnMatchCreate);
+
+            manager.matchName = "surfacebook2";
+
+            //manager.matchSize = (uint)match.currentSize;
         }
 
         public void findMatch()
