@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/PaperTest01.unity
+- path: Assets/Scenes/SharingWithUnetAlign.unity
   isLoaded: 1
   isActive: 1

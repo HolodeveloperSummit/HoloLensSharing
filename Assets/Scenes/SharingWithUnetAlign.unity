@@ -626,8 +626,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CalibrateSharedWorldSpace
+      - m_Target: {fileID: 1898807465}
+        m_MethodName: stopHost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1451,6 +1451,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114995482139569368, guid: 19489d2b2de354344ad55c2d5413a6a1,
+        type: 2}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadCalibrationScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114995482139569368, guid: 19489d2b2de354344ad55c2d5413a6a1,
+        type: 2}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1898807461}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19489d2b2de354344ad55c2d5413a6a1, type: 2}
   m_IsPrefabParent: 0
@@ -1931,8 +1941,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CalibrateSharedWorldSpace
+      - m_Target: {fileID: 1898807465}
+        m_MethodName: createMatch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2809,8 +2819,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CalibrateSharedWorldSpace
+      - m_Target: {fileID: 1898807465}
+        m_MethodName: startMM
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3434,6 +3444,7 @@ MonoBehaviour:
   - {fileID: 1749093971}
   - {fileID: 1931683451}
   unetSharingStage: {fileID: 1898807460}
+  calibrationSceneName: PaperTest01
 --- !u!114 &1898807462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3834,8 +3845,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CalibrateSharedWorldSpace
+      - m_Target: {fileID: 1898807465}
+        m_MethodName: findMatch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3953,8 +3964,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CalibrateSharedWorldSpace
+      - m_Target: {fileID: 1898807465}
+        m_MethodName: joinMatch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

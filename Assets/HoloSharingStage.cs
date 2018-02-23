@@ -6,6 +6,7 @@ public class HoloSharingStage : MonoBehaviour {
     public GameObject[] duplicatedObjectsToRemove;
     public GameObject unetSharingStage;
     GameObject sceneParent;
+    public string calibrationSceneName;
 
     // Use this for initialization
     void Awake () {
@@ -27,4 +28,16 @@ public class HoloSharingStage : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void LoadCalibrationScene()
+    {
+        if (!string.IsNullOrEmpty(calibrationSceneName) && UnityEngine.SceneManagement.SceneManager.GetSceneByName(calibrationSceneName) != null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(calibrationSceneName);
+        }
+        else
+        {
+            Debug.Log("Invalid Scene Name:" + calibrationSceneName);
+        }
+    }
 }

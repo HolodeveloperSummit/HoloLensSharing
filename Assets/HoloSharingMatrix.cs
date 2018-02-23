@@ -34,13 +34,22 @@ public class HoloSharingMatrix : MonoBehaviour {
         if (Input.GetKey(KeyCode.L) && Time.realtimeSinceStartup - lastTimeRun > 2f)
         {
             lastTimeRun = Time.realtimeSinceStartup;
-            LoadScene();
+            LoadMainScene();
         }
     }
 
-    public void LoadScene()
+    public void LoadMainScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
+
+
+        if (!string.IsNullOrEmpty(mainSceneName) && UnityEngine.SceneManagement.SceneManager.GetSceneByName(mainSceneName) != null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(mainSceneName);
+        }
+        else
+        {
+            Debug.Log("Invalid Scene Name:" + mainSceneName);
+        }
     }
 
     public void CalibrateSharedWorldSpace()
