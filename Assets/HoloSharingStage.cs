@@ -13,9 +13,12 @@ public class HoloSharingStage : MonoBehaviour {
         if (sceneParent != null) {
             unetSharingStage.transform.SetParent(sceneParent.transform, false);
 
-            foreach(GameObject goToRemove in duplicatedObjectsToRemove)
+            if (duplicatedObjectsToRemove.Length > 0)
             {
-                DestroyImmediate(goToRemove);
+                foreach (GameObject goToRemove in duplicatedObjectsToRemove)
+                {
+                    Destroy(goToRemove);
+                }
             }
         }
 	}
