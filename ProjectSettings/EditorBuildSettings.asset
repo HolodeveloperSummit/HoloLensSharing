@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PaperTest01.unity
     guid: 17af097854e3b0e46bf888c7c0595e55
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SharingWithUnetAlign.unity
     guid: f3313cfce34b6bf418cca226f5eaed93
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Connect02.unity
     guid: fa0db9e9a3c694846bfa6f79767d62cb
+  - enabled: 0
+    path: Assets/HoloToolkit/SharingWithUNET/Scenes/SharingWithUnetExample.unity
+    guid: 2cb8a97d98d81224c8b7d0495d361558
+  - enabled: 1
+    path: Assets/Scenes/SharingWithUnetAnchorManual.unity
+    guid: fdece92c0400cd04aabe6b415d5c54bb
